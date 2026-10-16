@@ -44,11 +44,11 @@ void list_events()
         return;
     }
 
-    printf("\nID\tName\tCapacity\tSeats Taken\n");
+    printf("\nID\t\tName\t\tCapacity\t\tSeats Taken\n");
 
     while (fread(&e, sizeof(Event), 1, fp) == 1)
     {
-        printf("%d\t%s\t%d\t\t%d\n",
+        printf("%d\t\t%s\t\t%d\t\t\t%d\n",
                e.id, e.name, e.capacity,
                seats_taken(e.id));
     }
