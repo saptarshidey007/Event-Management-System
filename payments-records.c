@@ -65,7 +65,7 @@ void make_payment()
 
     printf("Enter Payment Mode (Cash/UPI/Card): ");
     scanf("%14s", pay.mode);
-    if(pay.mode!="Cash" || pay.mode!="UPI" || pay.mode!="Card"){
+    if(pay.mode!="Cash" && pay.mode!="UPI" && pay.mode!="Card"){
         printf("Invalid mode of payment!\n");
         return;
     }
@@ -97,11 +97,11 @@ void list_payments()
         return;
     }
 
-    printf("\nPay ID\tPart. ID\tEvent ID\tAmount\tMode\tStatus\n");
+    printf("\nPay ID\t\tPart. ID\t\tEvent ID\t\tAmount\t\tMode\t\tStatus\n");
 
     while (fread(&pay, sizeof(Payment), 1, fp) == 1)
     {
-        printf("%d\t%d\t\t%d\t\t%.2f\t%s\t%s\n",
+        printf("%d\t\t%d\t\t\t%d\t\t\t%.2f\t\t%s\t\t%s\n",
                pay.payid, pay.pid, pay.eventID,
                pay.amount, pay.mode, pay.status);
     }
