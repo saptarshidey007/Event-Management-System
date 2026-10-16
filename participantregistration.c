@@ -77,11 +77,11 @@ void list_participants()
         return;
     }
 
-    printf("\nID\tName\tAge\tEmail\tPhone\tCollege\tEvent ID\n");
+    printf("\nID\t\tName\t\tAge\t\tEmail\t\tPhone\t\tCollege\t\tEvent ID\n");
 
     while (fread(&p, sizeof(Participant), 1, fp) == 1)
     {
-        printf("%d\t%s\t%d\t%s\t%s\t%s\t%d\n",
+        printf("%d\t\t%s\t\t%d\t\t%s\t\t%s\t\t%s\t\t\t%d\n",
                p.pid, p.cname, p.age,
                p.email, p.phone, p.college, p.eventID);
     }
